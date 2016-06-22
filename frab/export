@@ -1,0 +1,9 @@
+#!/bin/bash
+
+. ./.env
+mkdir -p ${DOCKERDATA}/backup/
+
+docker exec -ti frab /bin/bash -c "RAILS_ENV=production CONFERENCE=${CONF_SHORT} rake frab:conference_export ; cp -a tmp/frab_export public/"
+docker exec frab-mariadb sh -c "exec mysqldump --databases -uroot -p${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE}" > ${HOME}/dockerdata/backup/${MYSQL_DATABASE}.sql
+cp -a ${HOME}/dockerdata/frab/frab_export ${HOME}/dockerdata/backup/
+

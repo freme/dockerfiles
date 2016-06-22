@@ -1,0 +1,5 @@
+. ./.env
+docker stop frab; docker rm frab; docker stop frab-mariadb; docker rm frab-mariadb
+echo "to reset everything to 'factory':"
+echo "rm -rf ${DOCKERDATA}"
+

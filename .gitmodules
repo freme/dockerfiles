@@ -1,0 +1,3 @@
+[submodule "frab/frab"]
+	path = frab/frab
+	url = https://github.com/frab/frab.git

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+. ./.env
+cp -a ${DOCKERDATA}/backup/frab_export ${DOCKERDATA}/frab/
+docker exec -ti frab /bin/bash -c 'cp -a public/frab_export tmp/; RAILS_ENV=production rake frab:conference_import'
+
