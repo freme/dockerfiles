@@ -1,0 +1,33 @@
+MYSQL_ROOT_PASSWORD=frab-root-secret
+MYSQL_DATABASE=frabdb
+MYSQL_USER=frabuser
+MYSQL_PASSWORD=frab-secret
+
+FRAB_HOST=http://localhost
+FRAB_PROTOCOL=http
+FROM_EMAIL=frab@localhost
+EXCEPTION_EMAIL=frab@localhost
+
+# http://guides.rubyonrails.org/v4.2.5/configuring.html#configuring-a-database
+DATABASE_URL='mysql2://frabuser:frab-secret@mysql:3306/frabdb?encoding=utf8'
+
+SECRET_KEY_BASE=frab-secret-key-base
+
+# MAIL SETTINGS
+#SMTP_ADDRESS='smtp.org'
+#SMTP_PORT='587'
+#SMTP_DOMAIN='sandbox.org'
+#SMTP_USER_NAME='postmaster@sandbox.mail.org'
+#SMTP_PASSWORD='lalala'
+#SMTP_AUTHENTICATION='1'
+#SMTP_NOTLS=1
+
+#FRAB_CURRENCY_UNIT="€"
+#FRAB_CURRENCY_FORMAT="%n%u"
+#RAILS_SERVE_STATIC_FILES=1
+
+# which folder to mount frab/mariadb
+DOCKERDATA=/Users/william/dockerdata
+
+#short name of the conference you want to backup/export
+CONF_SHORT=CONF001
