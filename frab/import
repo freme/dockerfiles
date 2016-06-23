@@ -5,6 +5,6 @@ cp -a ${DOCKERDATA}/backup/frab_export ${DOCKERDATA}/frab/
 docker exec -ti frab /bin/bash -c 'cp -a public/frab_export tmp/; RAILS_ENV=production rake frab:conference_import ; tar xzf tmp/frab_export/attachments.tar.gz'
 
 mkdir -p ${DOCKERDATA}/frab-mariadb/frab-backup
-cp -a ${DOCKERDATA}backup/${MYSQL_DATABASE}.sql ${DOCKERDATA}/frab-mariadb/frab-backup/
+cp -a ${DOCKERDATA}/backup/${MYSQL_DATABASE}.sql ${DOCKERDATA}/frab-mariadb/frab-backup/
 docker exec frab-mariadb sh -c "exec mysql -uroot -p${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE} < /var/lib/mysql/frab-backup/${MYSQL_DATABASE}.sql"
 
