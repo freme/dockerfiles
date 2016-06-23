@@ -6,7 +6,7 @@ Using an ubuntu 16.04 and a manually installed, passenger-enabled nginx, this im
 Build the Image
 ===============
 
-* Execute *./make*
+* Execute *./make* to build the image yourself.
 
 Configuration
 =============
@@ -36,3 +36,13 @@ Stop Container
 
 * Execute *.stop*
 
+Log Files
+=========
+
+* Run an interactive session to watch the logs
+
+    docker exec -ti frab /bin/bash
+    export TERM=vt100
+    tail -f log/production.log
+
+* Vim is installed should you need an editor

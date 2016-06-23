@@ -56,6 +56,8 @@ sudo /opt/nginx/sbin/nginx -t
 echo "http://localhost"
 echo "user: admin@example.org"
 echo "pass: test123"
+echo "passenger log:"
+echo "docker exec -ti frab /bin/bash -c 'tail -f log/production.log'"
 
 sudo /opt/nginx/sbin/nginx
 

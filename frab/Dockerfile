@@ -40,5 +40,6 @@ bundle install --without="postgresql" && \
 cp -a public public_saved
 
 EXPOSE 80
+COPY paperclip.rb /home/frab/config/initializers/paperclip.rb
 COPY init.sh /home/frab/init.sh
 ENTRYPOINT ["/bin/bash", "/home/frab/init.sh"]
