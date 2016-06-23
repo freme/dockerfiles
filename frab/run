@@ -15,5 +15,5 @@ while [ $READY -lt 1 ]; do
   TIMESTAMP=$(docker logs --timestamps frab-mariadb 2>&1 | tail -n1 | cut -d ' ' -f 1)
 done
 
-docker run --name frab -e PASSENGER_APP_ENV=production -v ${DOCKERDATA}/frab:/home/frab/public --link frab-mariadb:mysql -p 80:80 -p 25:25 -p 587:587 -p 465:465 -d freme/frab; docker logs --timestamps --follow frab
+docker run --name frab -e PASSENGER_APP_ENV=production -v ${DOCKERDATA}/frab:/home/frab/public --link frab-mariadb:mysql -p 80:80 -d freme/frab; docker logs --timestamps --follow frab
 
