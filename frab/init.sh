@@ -31,6 +31,10 @@ ln -s .env .env.production
 #sudo apt-get install -y sendmail
 #sed -i '66i config.action_mailer.delivery_method = :sendmail' config/environments/production.rb
 
+# change the even_types
+sed -i 's/lecture workshop podium lightning_talk meeting film concert djset performance other/techtalk workshop bof lightning_talk/g' app/models/event.rb
+sed -i 's/collection: timeslots,/collection: timeslots, selected: "00:00",/g' app/views/cfp/events/_form.html.haml
+
 #precompile assets
 RAILS_ENV=production bundle exec rake assets:precompile
 
