@@ -12,7 +12,7 @@ RUN apt-get update -qqy \
     ca-certificates \
     openjdk-8-jdk \
     maven ant \
-    nodejs \
+    nodejs npm \
     tar zip unzip \
     wget curl \
     git \
