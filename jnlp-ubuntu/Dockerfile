@@ -70,7 +70,7 @@ RUN chmod +x /opt/bin/entry_point.sh
 #====================================
 # AWS CLI
 #====================================
-RUN pip install --upgrade pip; pip install awscli
+RUN pip install --upgrade pip; pip install setuptools; pip install awscli
 
 # compatibility with CloudBees AWS CLI Plugin which expects pip to be installed as user
 RUN mkdir -p /home/jenkins/.local/bin/ \
