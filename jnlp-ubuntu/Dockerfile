@@ -21,6 +21,7 @@ RUN apt-get update -qqy \
     python python-pip groff \
     rlwrap \
     mysql-client \
+    sudo \
   && rm -rf /var/lib/apt/lists/* \
   && sed -i 's/securerandom\.source=file:\/dev\/random/securerandom\.source=file:\/dev\/urandom/' ./usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.security
 
@@ -96,13 +97,13 @@ RUN mkdir /opt/jmeter \
 # JENKINS SLAVE
 #====================================
 
-RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar http://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/2.60/remoting-2.20.jar \
+RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar http://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/2.60/remoting-2.60.jar \
   && chmod 755 /usr/share/jenkins \
   && chmod 644 /usr/share/jenkins/slave.jar
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 
-RUN chmod a+rwx /home/jenkins
+RUN chmod a+rwx /home/jenkins; chmod +x /usr/local/bin/jenkins-slave; chmod +x /opt/bin/entry_point.sh
 
 WORKDIR /home/jenkins
 USER jenkins

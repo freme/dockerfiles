@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker build --tag=freme/jnlp-upbuntu:latest --rm=true --no-cache .
-#docker build --tag=freme/jnlp-upbuntu:latest .
+docker build --tag=freme/jnlp-ubuntu:latest --rm=true --no-cache .
+#docker build --tag=freme/jnlp-ubuntu:latest .
 
