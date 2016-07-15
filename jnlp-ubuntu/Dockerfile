@@ -40,6 +40,7 @@ RUN  mkdir -p /opt/selenium \
 #========================================
 RUN useradd jenkins --shell /bin/bash --create-home \
   && usermod -a -G sudo jenkins \
+  && usermod -a -G docker jenkins \
   && echo 'ALL ALL = (ALL) NOPASSWD: ALL' >> /etc/sudoers \
   && echo 'jenkins:secret' | chpasswd
 
