@@ -5,6 +5,8 @@ FROM ubuntu:16.04
 RUN dpkg --add-architecture i386 && apt-get update -qqy \
   && apt-get -qqy --no-install-recommends install software-properties-common
 
+VOLUME ["/var/run/docker.sock"]
+
 RUN apt-get update -qqy \
   && apt-get -qqy --no-install-recommends install \
     iproute \
@@ -116,6 +118,6 @@ USER jenkins
 # for dev purpose
 # USER root
 
-ENTRYPOINT ["/opt/bin/entry_point.sh", "/usr/local/bin/jenkins-slave"]
+ENTRYPOINT ["groupmod -g $(stat -c \"%g\" /var/run/docker.sock) docker && usermod -u $(stat -c \"%u\" /home/jenkins) jenkins", "/opt/bin/entry_point.sh", "/usr/local/bin/jenkins-slave"]
 
 EXPOSE 4444
