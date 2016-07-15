@@ -22,7 +22,7 @@ RUN apt-get update -qqy \
     rlwrap \
     mysql-client \
     sudo \
-    docker \
+    docker.io \
     ruby \
     rpm rpm-common \
     libc6:i386 uuid-dev zlib1g-dev \
