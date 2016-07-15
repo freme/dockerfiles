@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 # https://github.com/cloudbees/java-build-tools-dockerfile/raw/master/Dockerfile
 
-RUN apt-get update -qqy \
+RUN dpkg --add-architecture i386 && apt-get update -qqy \
   && apt-get -qqy --no-install-recommends install software-properties-common
 
 RUN apt-get update -qqy \
@@ -22,6 +22,10 @@ RUN apt-get update -qqy \
     rlwrap \
     mysql-client \
     sudo \
+    docker \
+    ruby \
+    rpm rpm-common \
+    libc6:i386 uuid-dev zlib1g-dev \
   && rm -rf /var/lib/apt/lists/* \
   && sed -i 's/securerandom\.source=file:\/dev\/random/securerandom\.source=file:\/dev\/urandom/' ./usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.security
 

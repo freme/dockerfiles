@@ -19,6 +19,7 @@ libssl-dev \
 curl \
 libcurl4-openssl-dev \
 libreadline-gplv2-dev \
+sendmail \
 vim sed
 
 RUN gem install passenger --no-rdoc --no-ri && \
