@@ -5,7 +5,7 @@ FROM ubuntu:16.04
 RUN dpkg --add-architecture i386 && apt-get update -qqy \
   && apt-get -qqy --no-install-recommends install software-properties-common
 
-VOLUME ["/var/run/docker.sock"]
+#VOLUME ["/var/run/docker.sock"]
 
 RUN apt-get update -qqy \
   && apt-get -qqy --no-install-recommends install \
@@ -110,7 +110,7 @@ RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar http://repo.jenkins-ci
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 
-RUN chmod a+rwx /home/jenkins; chmod +x /usr/local/bin/jenkins-slave; chmod +x /opt/bin/entry_point.sh
+RUN rm -rf /var/run/docker.sock; chmod a+rwx /home/jenkins; chmod +x /usr/local/bin/jenkins-slave; chmod +x /opt/bin/entry_point.sh
 
 WORKDIR /home/jenkins
 USER jenkins
