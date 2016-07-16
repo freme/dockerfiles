@@ -118,7 +118,7 @@ USER jenkins
 # for dev purpose
 # USER root
 
-ENV REMOTING_OPTS -Dhudson.remoting.Launcher.pingIntervalSec=-1
+#ENV REMOTING_OPTS -Dhudson.remoting.Launcher.pingIntervalSec=-1
 ENTRYPOINT ["/opt/bin/entry_point.sh", "/usr/local/bin/jenkins-slave"]
 
 EXPOSE 4444
