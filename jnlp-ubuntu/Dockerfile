@@ -119,7 +119,7 @@ USER jenkins
 # for dev purpose
 # USER root
 
-ENV REMOTING_OPTS -Djenkins.slaves.JnlpSlaveAgentProtocol3.enabled=true -Dhudson.remoting.Launcher.pingIntervalSec=86400 -Dhudson.remoting.Launcher.pingTimeoutSec=86400 -Dhudson.remoting.Engine.socketTimeout=86400000 -Dhudson.remoting.FlightRecorderInputStream.BUFFER_SIZE=4194304 -Dhudson.remoting.SynchronousCommandTransport.failOnSocketTimeoutInReader=false -Dhudson.slaves.ChannelPinger.pingInterval=1440
+#ENV REMOTING_OPTS -Djenkins.slaves.JnlpSlaveAgentProtocol3.enabled=true -Dhudson.remoting.Launcher.pingIntervalSec=86400 -Dhudson.remoting.Launcher.pingTimeoutSec=86400 -Dhudson.remoting.Engine.socketTimeout=86400000 -Dhudson.remoting.FlightRecorderInputStream.BUFFER_SIZE=4194304 -Dhudson.remoting.SynchronousCommandTransport.failOnSocketTimeoutInReader=false -Dhudson.slaves.ChannelPinger.pingInterval=1440
 
 ENTRYPOINT ["/opt/bin/entry_point.sh", "/usr/local/bin/jenkins-slave"]
 
