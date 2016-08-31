@@ -104,7 +104,7 @@ RUN mkdir /opt/jmeter \
 #====================================
 # GOOGLE REPO TOOL
 #====================================
-RUN curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo && chmod a+x /usr/bin/repo
 
 #====================================
 # JENKINS SLAVE
