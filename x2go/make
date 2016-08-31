@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker build --tag=x2golxde:latest --rm=true --no-cache .
+

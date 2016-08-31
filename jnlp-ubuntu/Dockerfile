@@ -102,10 +102,15 @@ RUN mkdir /opt/jmeter \
 # https://raw.githubusercontent.com/cloudbees/jnlp-slave-with-java-build-tools-dockerfile/master/jenkins-slave
 
 #====================================
+# GOOGLE REPO TOOL
+#====================================
+RUN curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+
+#====================================
 # JENKINS SLAVE
 #====================================
 
-RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar http://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/2.60/remoting-2.60.jar \
+RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar http://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/2.62/remoting-2.62.jar \
   && chmod 755 /usr/share/jenkins \
   && chmod 644 /usr/share/jenkins/slave.jar
 
